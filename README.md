@@ -16,14 +16,14 @@ The system enables **automated, zero-touch payouts** using real-time data monito
 
 Gig workers (Swiggy, Zomato, Amazon, Zepto delivery partners) rely on daily earnings. External disruptions such as:
 
-* Heavy rainfall / floods
-* Extreme heat
-* High pollution (AQI)
-* Curfews / road closures
+1)Heavy rainfall / floods
+2)Extreme heat
+3)High pollution (AQI)
+4)Curfews / road closures
 
 can reduce working hours and cause **20–30% income loss**.
 
-⚠️ This solution focuses strictly on **income protection only** (no health, vehicle, or life coverage).
+Note: This solution focuses strictly on **income protection only** (no health, vehicle, or life coverage).
 
 ---
 
@@ -32,7 +32,7 @@ can reduce working hours and cause **20–30% income loss**.
 A delivery partner earns ₹500/day.
 Due to heavy rainfall, they cannot work → lose ₹1000 in 2 days.
 
-👉 GigShield AI:
+# GigShield AI:
 
 * Detects disruption via API
 * Automatically triggers claim
@@ -65,7 +65,7 @@ Weekly Premium = Base Price + (Risk Score × Factor)
 * Base Price = ₹50
 * Risk Score = 3
 
-👉 Premium = ₹110/week
+Premium = ₹110/week
 
 ---
 
@@ -77,7 +77,7 @@ Weekly Premium = Base Price + (Risk Score × Factor)
 * Traffic disruptions / road closures
 * Curfew / restricted zones
 
-✔ Fully automated → No manual claims
+Note: Fully automated → No manual claims
 
 ---
 
