@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Parametric Insurance</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- LOGIN OVERLAY -->
+<div id="loginPage" class="login-container">
+    <h2>🔐 Login</h2>
+    <input id="username" placeholder="Enter Username (ravi / arjun / sneha)">
+    <button onclick="login()">Login</button>
+</div>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>⚡ AI Insurance</h2>
+        <ul>
+            <li onclick="switchTab('dashboard')" class="active">Dashboard</li>
+            <li onclick="switchTab('fraud')">Fraud</li>
+            <li onclick="switchTab('payout')">Payout</li>
+        </ul>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+        <!-- 🔥 FIXED TICKER (INSIDE MAIN) -->
+        <div class="ticker">
+            <div id="tickerText">🚀 System Ready</div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <h1>Delivery Partner Dashboard</h1>
+            <p id="userDisplay"></p>
+            <p>AI-powered parametric insurance system</p>
+        </div>
+
+        <!-- KPI -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <h4>Risk Score</h4>
+                <p id="kpiRisk">--</p>
+            </div>
+            <div class="kpi-card">
+                <h4>Weekly Premium</h4>
+                <p id="kpiPremium">--</p>
+            </div>
+            <div class="kpi-card">
+                <h4>Claim Status</h4>
+                <p id="kpiClaim">Inactive</p>
+            </div>
+        </div>
+
+        <!-- Delivery Zone -->
+        <div class="card">
+            <h3>📍 Delivery Zone</h3>
+            <div class="map">
+                <div class="zone"></div>
+                <div class="marker"></div>
+            </div>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid">
+
+            <!-- Onboarding -->
+            <div class="card">
+                <h3>📋 Onboarding</h3>
+                <input id="income" placeholder="Weekly Income ₹">
+                <input id="city" placeholder="City (Hyderabad / Mumbai / Delhi)">
+                <button onclick="calculatePremium()">Generate Premium</button>
+                <div id="premiumResult" class="result-box"></div>
+            </div>
+
+            <!-- Risk Analytics -->
+            <div class="card">
+                <h3>📊 Risk Analytics</h3>
+                <canvas id="riskChart"></canvas>
+            </div>
+
+            <!-- Disruption -->
+            <div class="card">
+                <h3>⚡ Disruption</h3>
+                <select id="event">
+                    <option value="none">No Disruption</option>
+                    <option value="rain">Heavy Rain</option>
+                    <option value="heat">Extreme Heat</option>
+                    <option value="curfew">Curfew</option>
+                </select>
+                <button onclick="triggerDisruption()">Run Trigger</button>
+                <div id="claimResult" class="result-box"></div>
+            </div>
+
+            <!-- Fraud -->
+            <div class="card">
+                <h3>🕵️ Fraud Detection</h3>
+                <button onclick="checkFraud()">Analyze</button>
+                <div id="fraudBox" class="result-box"></div>
+            </div>
+
+            <!-- Payout -->
+            <div class="card">
+                <h3>💰 Payout</h3>
+                <button onclick="processPayout()">Release</button>
+                <div id="payoutBox" class="result-box"></div>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+<!-- Rain Effect -->
+<div id="rainContainer"></div>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
