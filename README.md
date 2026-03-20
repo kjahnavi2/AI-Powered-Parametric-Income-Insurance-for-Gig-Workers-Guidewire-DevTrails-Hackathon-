@@ -1,4 +1,7 @@
+Project Title
+
 GigShield: AI-Powered Parametric Insurance for Gig Delivery Workers
+
 Problem Overview
 
 Platform-based delivery workers form the backbone of India’s on-demand economy. However, their earnings are highly vulnerable to external disruptions such as heavy rainfall, extreme heat, pollution spikes, and unexpected curfews. These events can reduce working hours significantly, often leading to a 20–30% loss in weekly income.
@@ -22,17 +25,12 @@ GigShield is an AI-enabled parametric insurance system that eliminates manual cl
 The system focuses strictly on income protection and does not include coverage for health, accidents, or vehicle-related damages, ensuring full compliance with the problem constraints.
 
 System Workflow
-User Onboarding
 
-Delivery partner registers with basic details and location.
+User Onboarding Delivery partner registers with basic details and location.
 
-Policy Selection
+Policy Selection User selects a weekly insurance plan based on suggested risk level.
 
-User selects a weekly insurance plan based on suggested risk level.
-
-Risk Assessment (AI-Based)
-
-The system evaluates:
+Risk Assessment (AI-Based) The system evaluates:
 
 Historical weather patterns
 
@@ -42,9 +40,7 @@ Worker activity trends
 
 Based on this, a dynamic weekly premium is assigned.
 
-Real-Time Monitoring
-
-The platform continuously tracks:
+Real-Time Monitoring The platform continuously tracks:
 
 Weather conditions (via APIs or simulated data)
 
@@ -68,18 +64,13 @@ Location validation
 
 Activity consistency
 
-Instant Payout (Simulated)
-
-The approved payout is credited to the user via a simulated payment system.
+Instant Payout (Simulated) The approved payout is credited to the user via a simulated payment system.
 
 Weekly Premium Model
 
 The pricing model is designed to align with the weekly earning cycle of gig workers.
 
-Risk Category	Weekly Premium	Coverage Amount
-Low Risk	₹20	₹300
-Medium Risk	₹40	₹500
-High Risk	₹60	₹800
+Risk Category Weekly Premium Coverage Amount Low Risk ₹20 ₹300 Medium Risk ₹40 ₹500 High Risk ₹60 ₹800
 
 Premiums are dynamically adjusted based on AI-driven risk evaluation of the worker’s operating zone.
 
@@ -101,17 +92,11 @@ AI/ML Integration
 
 The platform incorporates AI components in the following areas:
 
-Risk Modeling
+Risk Modeling Predicts likelihood of disruptions using historical environmental and regional data.
 
-Predicts likelihood of disruptions using historical environmental and regional data.
+Dynamic Premium Calculation Adjusts weekly pricing based on risk exposure of the worker’s location.
 
-Dynamic Premium Calculation
-
-Adjusts weekly pricing based on risk exposure of the worker’s location.
-
-Fraud Detection
-
-Detects anomalies such as:
+Fraud Detection Detects anomalies such as:
 
 Location inconsistencies
 
@@ -148,6 +133,7 @@ External Integrations: Weather APIs, simulated platform and payment services
 This stack supports real-time data processing, AI-driven decisions, and seamless user interaction.
 
 Development Plan
+
 Phase 1 (Ideation and Design)
 
 Define persona and use-case scenarios
