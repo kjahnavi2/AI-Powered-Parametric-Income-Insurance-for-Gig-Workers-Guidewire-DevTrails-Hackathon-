@@ -1,171 +1,273 @@
-**Project Title**
-
-GigShield: AI-Powered Parametric Insurance for Gig Delivery Workers
-
-## Live Prototype
-
-Access the working prototype here:
+🚀 GigShield: AI-Powered Parametric Income Insurance for Gig Workers
+🔗 Live Prototype
 
 👉 https://kjahnavi2.github.io/AI-Powered-Parametric-Income-Insurance-for-Gig-Workers-Guidewire-DevTrails-Hackathon-/
 
+📌 Problem Statement
 
+Gig delivery workers are critical to India’s on-demand economy, yet their income is highly unstable. External disruptions such as:
 
-**Problem Overview**
+Heavy rainfall
 
-Platform-based delivery workers form the backbone of India’s on-demand economy. However, their earnings are highly vulnerable to external disruptions such as heavy rainfall, extreme heat, pollution spikes, and unexpected curfews. These events can reduce working hours significantly, often leading to a 20–30% loss in weekly income.
+Extreme heat
 
-Currently, there is no structured mechanism to compensate this income loss. Workers bear the full financial impact of conditions beyond their control.
+High pollution (AQI spikes)
 
-GigShield addresses this gap by introducing a parametric insurance platform that automatically protects income during such disruptions.
+Government-imposed curfews
 
-**Persona and Real-World Context**
+can reduce working hours and lead to 20–30% weekly income loss.
 
-Ravi is a 26-year-old food delivery partner working with Swiggy in Hyderabad. He typically works 9 hours a day and earns around ₹700 daily. During monsoon weeks, heavy rain reduces his working hours drastically, sometimes cutting his earnings in half.
+Currently, there is no structured, automated system to compensate for this loss. Workers bear the full financial burden of unpredictable external conditions.
 
-Ravi cannot predict such disruptions, nor does he have any financial backup for these losses. Missing even a few working days impacts his ability to cover rent and daily expenses.
+👤 Target Users (Clearly Defined)
 
-GigShield is designed for workers like Ravi. It provides a simple weekly insurance plan that ensures he receives compensation automatically whenever external disruptions prevent him from working.
+GigShield is designed for:
 
-**Solution Approach**
+Urban gig delivery workers (Swiggy, Zomato, Blinkit, Zepto)
 
-GigShield is an AI-enabled parametric insurance system that eliminates manual claims. Instead of requiring users to file claims, the platform continuously monitors external conditions and triggers payouts automatically when predefined thresholds are met.
+Daily earnings: ₹500–₹1000
 
-The system focuses strictly on income protection and does not include coverage for health, accidents, or vehicle-related damages, ensuring full compliance with the problem constraints.
+Work duration: 8–10 hours/day
 
-**System Workflow**
+Operate in weather-sensitive, high-density urban zones
 
-User Onboarding Delivery partner registers with basic details and location.
+Have no formal insurance or financial buffer
 
-Policy Selection User selects a weekly insurance plan based on suggested risk level.
+🧍 Persona: Real-World Context
 
-**Risk Assessment (AI-Based) The system evaluates:**
+Ravi, a 26-year-old Swiggy delivery partner in Hyderabad:
 
-Historical weather patterns
+Earns ~₹700/day
 
-Location-based risk factors
+Works ~9 hours/day
 
-Worker activity trends
+During monsoon weeks, earnings drop by up to 50%
 
-Based on this, a dynamic weekly premium is assigned.
+Ravi cannot predict disruptions and lacks financial protection. Missing even a few days affects his ability to pay rent and daily expenses.
 
-**Real-Time Monitoring The platform continuously tracks:**
+👉 GigShield ensures Ravi gets compensated automatically when such disruptions occur.
 
-Weather conditions (via APIs or simulated data)
+💡 Solution Overview
 
-Environmental indicators such as AQI
+GigShield is an AI-powered parametric insurance platform that:
 
-Regional disruption signals
+Eliminates manual claims
 
-Parametric Trigger Activation
+Monitors external conditions in real-time
 
-**When a predefined condition is met (e.g., rainfall exceeds threshold), the system:**
+Automatically triggers payouts when predefined thresholds are met
 
-Automatically validates the event
+✅ No paperwork
+✅ No claim requests
+✅ Instant compensation
 
-Initiates a claim without user input
+⚙️ System Workflow
 
-Automated Claim Processing
+User Onboarding
 
-**The claim is verified through system checks such as:**
+Register with location and basic details
 
-Location validation
+Policy Selection
 
-Activity consistency
+Choose a weekly plan (Low / Medium / High risk)
 
-Instant Payout (Simulated) The approved payout is credited to the user via a simulated payment system.
+AI-Based Risk Assessment
 
-**Weekly Premium Model**
+Calculates personalized risk score
 
-The pricing model is designed to align with the weekly earning cycle of gig workers.
+Real-Time Monitoring
 
-Risk Category Weekly Premium Coverage Amount Low Risk ₹20 ₹300 Medium Risk ₹40 ₹500 High Risk ₹60 ₹800
+Tracks weather, AQI, and disruptions
 
-Premiums are dynamically adjusted based on AI-driven risk evaluation of the worker’s operating zone.
+Trigger Activation
 
-**Parametric Triggers**
+If thresholds are exceeded → automatic claim
 
-**The system defines clear, measurable triggers to eliminate ambiguity in claims:**
+Claim Processing
 
-Rainfall exceeding a defined threshold
+System validates event and user activity
 
-Temperature crossing extreme limits
+Instant Payout (Simulated)
 
-AQI levels entering hazardous range
+Compensation credited automatically
 
-Official curfew or zone shutdown
+🤖 AI/ML Implementation (Clear & Concrete)
+1. Risk Modeling
 
-Once triggered, these conditions directly initiate claim processing.
+Goal: Predict likelihood of income disruption
 
-**AI/ML Integration**
+Inputs (Features):
 
-The platform incorporates AI components in the following areas:
+Rainfall (mm)
 
-Risk Modeling Predicts likelihood of disruptions using historical environmental and regional data.
+Temperature (°C)
 
-Dynamic Premium Calculation Adjusts weekly pricing based on risk exposure of the worker’s location.
+AQI levels
 
-Fraud Detection Detects anomalies such as:
+Historical disruption frequency
 
-Location inconsistencies
+Location risk index
 
-Repeated or duplicate claims
+Model Used:
 
-Mismatch between reported and actual conditions
+Logistic Regression / Decision Tree (Scikit-learn)
 
-**Integration Strategy**
+Output:
 
-**To simulate real-world functionality, the platform integrates or mocks the following:**
+Risk Score (0 to 1)
 
-Weather data APIs (for environmental triggers)
+2. Dynamic Premium Calculation
 
-Traffic or regional disruption signals (mocked if needed)
+Premium is calculated using:
 
-Platform activity data (simulated delivery logs)
+Premium = Base Price × Risk Score × Location Factor
 
-Payment gateway (sandbox or mock environment)
+Example:
 
-**Technology Stack**
+Low Risk → ₹20
 
-**The system will be designed using a scalable and modular architecture:**
+Medium Risk → ₹40
 
-Frontend: React.js,JavaScript, HTML/CSS
+High Risk → ₹60
 
-Backend: Node.js with Express
+3. Fraud Detection
+
+Hybrid approach:
+
+Rule-Based Checks:
+
+GPS location mismatch
+
+Duplicate claims
+
+Unrealistic activity gaps
+
+Anomaly Detection:
+
+Repeated claims from same user
+
+Abnormal trigger patterns
+
+🌧️ Parametric Triggers
+
+Clear, objective triggers eliminate disputes:
+
+Rainfall exceeds threshold (e.g., >50mm/day)
+
+Temperature crosses extreme limits
+
+AQI enters hazardous range
+
+Official curfew / zone shutdown
+
+👉 Once triggered → automatic payout
+
+💰 Weekly Insurance Plans
+Risk Level	Premium	Coverage
+Low Risk	₹20	₹300
+Medium Risk	₹40	₹500
+High Risk	₹60	₹800
+🏗️ System Architecture
+Frontend (React.js)
+        ↓
+Backend API (Node.js + Express)
+        ↓
+AI Service (Python - Flask/FastAPI)
+        ↓
+Database (MongoDB)
+        ↓
+External APIs (Weather, AQI)
+Key Design Decisions:
+
+Node.js handles API + business logic
+
+Python service handles ML predictions
+
+Communication via REST APIs
+
+Real-time monitoring via scheduled jobs (cron)
+
+🔌 Integration Strategy
+
+Weather APIs (or simulated data)
+
+AQI data sources
+
+Mock delivery activity logs
+
+Simulated payment gateway
+
+📉 Market Crash Handling (Critical for Sustainability)
+
+GigShield ensures financial stability even during mass disruptions:
+
+1. Payout Caps
+
+Limits total payout per region per week
+
+2. Dynamic Premium Adjustment
+
+Premiums increase in high-risk periods
+
+3. Risk Pooling (Simulated Reinsurance)
+
+Distributes financial exposure across users
+
+4. Trigger Throttling
+
+Prevents multiple payouts from same event cluster
+
+👉 Ensures system remains scalable and financially viable
+
+🛠️ Technology Stack
+
+Frontend: React.js, HTML, CSS, JavaScript
+
+Backend: Node.js, Express
 
 Database: MongoDB
 
-AI/ML Layer: Python (Scikit-learn for predictive modeling)
+AI/ML: Python, Scikit-learn
 
-External Integrations: Weather APIs, simulated platform and payment services
+APIs: Weather, AQI (real or simulated)
 
-This stack supports real-time data processing, AI-driven decisions, and seamless user interaction.
+🚧 Development Roadmap
+Phase 1: Design
 
-**Development Plan**
+Persona definition
 
-**Phase 1 (Ideation and Design)**
+Workflow and trigger design
 
-Define persona and use-case scenarios
+AI model planning
 
-Design system workflow and triggers
+Phase 2: Implementation
 
-Outline AI models and pricing strategy
+User onboarding
 
-**Phase 2 (Core Implementation)**
+Premium calculation
 
-Build onboarding and policy management
+Trigger-based claims
 
-Implement dynamic premium calculation
+Phase 3: Optimization
 
-Integrate trigger-based claim system
+Fraud detection improvements
 
-**Phase 3 (Optimization and Scale)**
+Payout simulation
 
-Enhance fraud detection mechanisms
+Analytics dashboard
 
-Simulate instant payouts
+🌍 Expected Impact
 
-Develop analytics dashboard for users and administrators
+GigShield provides:
 
-**Expected Impact**
+Income stability for gig workers
 
-GigShield provides a practical safety net for gig workers by ensuring income continuity during unavoidable disruptions. By automating claims and payouts, it removes friction from the insurance process and builds trust among users who rely on consistent daily earnings.
+Zero-friction insurance experience
+
+Trust through automation and transparency
+
+By removing manual claims and ensuring instant payouts, GigShield transforms insurance into a reliable safety net for India’s gig economy.
+
+🏁 Final Note
+
+GigShield is not just an insurance product—it is a data-driven financial protection system designed for workers who need stability the most.
