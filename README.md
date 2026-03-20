@@ -128,7 +128,7 @@ Payment gateway (sandbox or mock environment)
 
 **The system will be designed using a scalable and modular architecture:**
 
-Frontend: React.js
+Frontend: React.js,JavaScript, HTML/CSS
 
 Backend: Node.js with Express
 
