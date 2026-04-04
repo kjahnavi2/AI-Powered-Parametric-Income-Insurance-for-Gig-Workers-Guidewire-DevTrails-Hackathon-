@@ -1,293 +1,215 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
+/* BASE */
 body {
-    background: radial-gradient(circle at top, #020617, #020617 40%, #0f172a);
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #0f172a;
     color: #e2e8f0;
-    overflow-x: hidden;
+    overflow: hidden; /* app-like feel */
 }
 
-/* ---------------- LAYOUT ---------------- */
+/* LAYOUT */
 .layout {
+    display: none; /* hidden before login */
+    height: 100vh;
+}
+
+/* AFTER LOGIN */
+.layout.active {
     display: flex;
 }
 
-/* ---------------- SIDEBAR ---------------- */
+/* SIDEBAR */
 .sidebar {
     width: 240px;
+    min-width: 240px;
     height: 100vh;
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(20px);
-    padding: 25px;
-    border-right: 1px solid rgba(255,255,255,0.05);
+    background: #020617;
+    padding: 25px 20px;
+    border-right: 1px solid #1e293b;
 }
 
 .sidebar h2 {
-    margin-bottom: 30px;
-    font-size: 20px;
+    margin-bottom: 25px;
     color: #38bdf8;
 }
 
 .sidebar ul {
     list-style: none;
+    padding: 0;
 }
 
 .sidebar li {
-    padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    border-radius: 8px;
+    transition: 0.2s;
     color: #cbd5f5;
 }
 
 .sidebar li:hover {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
-    color: white;
+    background: #1e293b;
     transform: translateX(5px);
 }
 
-.sidebar .active {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
-    color: white;
-}
-
-/* ---------------- MAIN ---------------- */
+/* MAIN */
 .main {
     flex: 1;
-    padding: 25px;
+    padding: 40px;
+    overflow-y: auto;
 }
 
-/* ---------------- HEADER ---------------- */
-.header h1 {
+/* HEADINGS */
+h1 {
     font-size: 26px;
-    font-weight: 600;
+    margin-bottom: 5px;
 }
 
-.header p {
-    opacity: 0.7;
-    margin-top: 5px;
+h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #38bdf8;
 }
 
-/* ---------------- KPI ---------------- */
-.kpi-grid {
-    display: flex;
-    gap: 20px;
-    margin: 25px 0;
-}
-
-.kpi-card {
-    flex: 1;
-    padding: 20px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: 0.3s;
-}
-
-.kpi-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(59,130,246,0.2);
-}
-
-.kpi-card h4 {
-    font-size: 14px;
-    opacity: 0.7;
-}
-
-.kpi-card p {
-    font-size: 22px;
-    margin-top: 8px;
-    font-weight: bold;
-}
-
-/* ---------------- GRID ---------------- */
+/* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
 }
 
-/* ---------------- CARD ---------------- */
+/* CARD */
 .card {
+    background: rgba(255, 255, 255, 0.03);
     padding: 20px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    border: 1px solid #1e293b;
     transition: 0.3s;
-    position: relative;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* ---------------- INPUT ---------------- */
+/* INPUT */
 input, select {
     width: 100%;
     padding: 12px;
-    margin-top: 12px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(0,0,0,0.3);
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #1e293b;
     color: white;
     outline: none;
-    transition: 0.2s;
 }
 
-input:focus {
-    border-color: #38bdf8;
-    box-shadow: 0 0 10px rgba(56,189,248,0.4);
+input:focus, select:focus {
+    border: 1px solid #38bdf8;
 }
 
-/* ---------------- BUTTON ---------------- */
+/* BUTTON (SMALL + CLEAN) */
 button {
-    width: 100%;
     margin-top: 12px;
-    padding: 12px;
-    border-radius: 12px;
+    padding: 6px 10px;
+    font-size: 12px;
+    width: auto;
+    border-radius: 8px;
     border: none;
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
-    color: white;
-    font-weight: 600;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: black;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(59,130,246,0.5);
+    box-shadow: 0 6px 20px rgba(56,189,248,0.4);
 }
 
-/* ---------------- RESULT ---------------- */
-.result-box {
-    margin-top: 12px;
-    padding: 12px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.4);
+/* ICON BUTTON */
+.icon-btn {
+    padding: 4px 8px;
     font-size: 14px;
+    background: #1e293b;
+    color: #38bdf8;
 }
 
-/* ---------------- STATUS ---------------- */
-.success { color: #22c55e; }
-.fail { color: #ef4444; }
-
-/* ---------------- LOGIN ---------------- */
-.login-container {
-    position: fixed;
-    inset: 0;
-    background: rgba(2,6,23,0.95);
-    backdrop-filter: blur(8px);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    z-index: 9999; /* 🔥 VERY IMPORTANT */
-}
-
-/* Centered login box feel */
-.login-container input {
-    width: 260px;
-    margin-top: 15px;
-}
-
-.login-container button {
-    width: 260px; /* 🔥 FIX stretched button */
-    margin-top: 15px;
-}
-
-/* ---------------- TOAST ---------------- */
-.toast {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #0f172a;
-    padding: 12px 20px;
-    border-radius: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.3s;
-}
-
-.toast.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ---------------- RAIN ---------------- */
-.raindrop {
-    position: fixed;
-    width: 2px;
-    height: 15px;
+.icon-btn:hover {
     background: #38bdf8;
-    top: -20px;
-    animation: fall linear infinite;
+    color: black;
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(100vh);
-    }
-}
-
-/* ---------------- HEAT ---------------- */
-.heatwave {
-    position: fixed;
-    inset: 0;
-    background: rgba(255, 100, 0, 0.08);
-    backdrop-filter: blur(2px);
-}
-
-/* ---------------- POLLUTION ---------------- */
-.pollution {
-    position: fixed;
-    inset: 0;
-    background: rgba(120,120,120,0.1);
-}
-/* ---------------- TICKER (FIXED ALERT BAR) ---------------- */
-.ticker {
-    position: fixed;
-    top: 0;
-    left: 240px;
-    right: 0;
-    height: 40px;
-
-    background: linear-gradient(90deg, #0ea5e9, #06b6d4);
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-
+/* RESULT BOX */
+.result {
+    margin-top: 12px;
+    background: #1e293b;
+    padding: 12px;
+    border-radius: 8px;
     font-size: 14px;
-    z-index: 100; /* lower than login */
 }
 
-/* push content down */
-.main {
-    margin-top: 40px;
-}
-#tickerText {
-    animation: slideText 8s linear infinite;
+/* PAGE */
+.page {
+    margin-top: 30px;
 }
 
-@keyframes slideText {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
+/* HIDDEN */
 .hidden {
     display: none;
 }
-.ticker {
-    display: none; /* hidden until login */
+
+/* LOGIN */
+.login-container {
+    position: fixed;
+    inset: 0;
+    background: #020617;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-body.login-active {
-    overflow: hidden;
+
+/* LOGIN INPUT */
+.login-container input {
+    width: 250px;
+}
+
+/* LOGIN BUTTON */
+.login-container button {
+    width: 250px;
+}
+
+/* CONTACT PAGE */
+#contactPage .card {
+    max-width: 400px;
+}
+
+#contactPage input {
+    margin-bottom: 10px;
+}
+
+/* TABLE STYLE (Expenses upgrade ready) */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background: #1e293b;
+    color: #38bdf8;
+    padding: 10px;
+}
+
+td {
+    background: #020617;
+    padding: 10px;
+    border-bottom: 1px solid #1e293b;
+}
+
+/* CANVAS (charts spacing) */
+canvas {
+    margin-top: 20px;
+    max-width: 100%;
 }

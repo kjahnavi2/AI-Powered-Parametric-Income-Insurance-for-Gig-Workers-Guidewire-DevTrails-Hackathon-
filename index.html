@@ -1,128 +1,322 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AI Parametric Insurance</title>
+    
+    <title>GigShield Pro</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-<!-- LOGIN OVERLAY -->
+<!-- LOGIN -->
 <div id="loginPage" class="login-container">
-    <h2>🔐 Login</h2>
-    <input id="username" placeholder="Enter Username (ravi / arjun / sneha)">
-    <button onclick="login()">Login</button>
+    <h2>Login</h2>
+    <input id="username" placeholder="Enter Username">
+    <button onclick="loginUser()">Login</button>
 </div>
 
 <div class="layout">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <h2>⚡ AI Insurance</h2>
-        <ul>
-            <li onclick="switchTab('dashboard')" class="active">Dashboard</li>
-            <li onclick="switchTab('fraud')">Fraud</li>
-            <li onclick="switchTab('payout')">Payout</li>
-        </ul>
-    </aside>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <h2>⚡ GigShield</h2>
+    <ul>
+        <li onclick="switchPage('dashboard')">Dashboard</li>
+        <li onclick="switchPage('loans')">Loans</li>
+        <li onclick="switchPage('smart')">Smart AI</li>
+        <li onclick="switchPage('survival')">Survival</li>
+        <li onclick="switchPage('safety')">Safety</li>
+        <li onclick="switchPage('community')">Community</li>
+        <li onclick="switchPage('goals')">Goals</li>
+        <li onclick="switchPage('expenses')">Expenses</li>
+        <li onclick="switchPage('career')">Career</li>
+        <li onclick="switchPage('insurance')">Insurance</li>
+        <li onclick="switchPage('risk')">Risk Analysis</li>
+        <li onclick="switchPage('trigger')">Smart Triggers</li>
+        <li onclick="switchPage('contact')">Contact</li>
+        
+    </ul>
+</aside>
 
-    <!-- Main -->
-    <main class="main">
+<!-- MAIN -->
+<main class="main">
 
-        <!-- 🔥 FIXED TICKER (INSIDE MAIN) -->
-        <div class="ticker">
-            <div id="tickerText">🚀 System Ready</div>
-        </div>
+<h1>Gig Worker Protection Platform</h1>
+<p id="userDisplay"></p>
 
-        <!-- Header -->
-        <div class="header">
-            <h1>Delivery Partner Dashboard</h1>
-            <p id="userDisplay"></p>
-            <p>AI-powered parametric insurance system</p>
-        </div>
-
-        <!-- KPI -->
-        <div class="kpi-grid">
-            <div class="kpi-card">
-                <h4>Risk Score</h4>
-                <p id="kpiRisk">--</p>
-            </div>
-            <div class="kpi-card">
-                <h4>Weekly Premium</h4>
-                <p id="kpiPremium">--</p>
-            </div>
-            <div class="kpi-card">
-                <h4>Claim Status</h4>
-                <p id="kpiClaim">Inactive</p>
-            </div>
-        </div>
-
-        <!-- Delivery Zone -->
+<!-- DASHBOARD -->
+<div id="dashboardPage" class="page">
+    <div class="grid">
         <div class="card">
-            <h3>📍 Delivery Zone</h3>
-            <div class="map">
-                <div class="zone"></div>
-                <div class="marker"></div>
-            </div>
+            <h3>Location Risk</h3>
+            <input id="city" placeholder="Enter city">
+            <button onclick="checkRisk()">Check</button>
+            <div id="riskResult" class="result"></div>
         </div>
 
-        <!-- Grid -->
-        <div class="grid">
-
-            <!-- Onboarding -->
-            <div class="card">
-                <h3>📋 Onboarding</h3>
-                <input id="income" placeholder="Weekly Income ₹">
-                <input id="city" placeholder="City (Hyderabad / Mumbai / Delhi)">
-                <button onclick="calculatePremium()">Generate Premium</button>
-                <div id="premiumResult" class="result-box"></div>
-            </div>
-
-            <!-- Risk Analytics -->
-            <div class="card">
-                <h3>📊 Risk Analytics</h3>
-                <canvas id="riskChart"></canvas>
-            </div>
-
-            <!-- Disruption -->
-            <div class="card">
-                <h3>⚡ Disruption</h3>
-                <select id="event">
-                    <option value="none">No Disruption</option>
-                    <option value="rain">Heavy Rain</option>
-                    <option value="heat">Extreme Heat</option>
-                    <option value="curfew">Curfew</option>
-                </select>
-                <button onclick="triggerDisruption()">Run Trigger</button>
-                <div id="claimResult" class="result-box"></div>
-            </div>
-
-            <!-- Fraud -->
-            <div class="card">
-                <h3>🕵️ Fraud Detection</h3>
-                <button onclick="checkFraud()">Analyze</button>
-                <div id="fraudBox" class="result-box"></div>
-            </div>
-
-            <!-- Payout -->
-            <div class="card">
-                <h3>💰 Payout</h3>
-                <button onclick="processPayout()">Release</button>
-                <div id="payoutBox" class="result-box"></div>
-            </div>
-
+        <div class="card">
+            <h3>Emergency</h3>
+            <button onclick="emergency()">Call</button>
         </div>
-
-    </main>
+    </div>
 </div>
 
-<!-- Rain Effect -->
-<div id="rainContainer"></div>
+<div id="loansPage" class="page hidden">
+    <h2>Loan System</h2>
 
-<!-- Toast -->
-<div id="toast" class="toast"></div>
+    <input id="loanAmount" placeholder="Enter amount">
+    <input id="loanReason" placeholder="Enter reason (medical, emergency, education...)">
 
+    <button onclick="requestLoan()">Request Loan</button>
+
+    <div id="loanResult" class="result"></div>
+</div>
+
+<div id="smartPage" class="page hidden">
+    <h2>Smart AI</h2>
+
+    <p>Ask any question (e.g. earnings tips, best time to work, safety tips)</p>
+
+    <input id="userQuestion" placeholder="Ask your question...">
+    <button onclick="getRecommendation()">Get Answer</button>
+
+    <div id="smartBox" class="result"></div>
+
+    <h3>History</h3>
+    <div id="historyBox" class="result"></div>
+</div>
+
+<!-- SURVIVAL -->
+<div id="survivalPage" class="page hidden">
+    <h2>Survival Dashboard</h2>
+
+    <div class="card">
+
+        <input id="name" placeholder="Name (optional)">
+        <input id="work" placeholder="Work (optional)">
+        <input id="company" placeholder="Company (optional)">
+        <input id="age" placeholder="Age (optional)">
+        
+        <input id="income" placeholder="Monthly Income">
+        <input id="expense" placeholder="Monthly Expense">
+
+        <input id="category" placeholder="Expense Category (food, travel, rent...)">
+
+        <select id="gender">
+            <option value="">Select Gender (optional)</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <button onclick="generateDashboard()">Generate Dashboard</button>
+
+        <div id="loadingBox" class="result"></div>
+
+        <canvas id="barChart"></canvas>
+        <canvas id="pieChart"></canvas>
+
+    </div>
+</div>
+
+<div id="safetyPage" class="page hidden">
+    <h2>Safety</h2>
+
+    <input id="safeCity" placeholder="Enter city">
+    <button onclick="checkSafety()">Check</button>
+
+    <div id="safetyBox" class="result"></div>
+
+    <canvas id="trafficChart"></canvas>
+</div>
+
+<div id="communityPage" class="page hidden">
+    <h2>Community</h2>
+
+    <input id="helpText" placeholder="Write help request or announcement">
+
+    <select id="target">
+        <option value="all">All Workers</option>
+        <option value="delivery">Delivery Workers</option>
+        <option value="drivers">Drivers</option>
+        <option value="personal">Specific Person</option>
+    </select>
+
+    <input id="personName" placeholder="Enter person name (optional)">
+
+    <button onclick="postHelp()">Post</button>
+
+    <div id="communityBox" class="result"></div>
+
+    <h3>History</h3>
+    <div id="communityHistory" class="result"></div>
+</div>
+
+<div id="goalsPage" class="page hidden">
+    <h2>Goals Planner</h2>
+
+    <select id="goalCategory">
+        <option value="">Select Category</option>
+        <option value="family">Family Needs</option>
+        <option value="assets">Buying Assets</option>
+        <option value="work">Work Growth</option>
+    </select>
+
+    <button onclick="loadGoals()">Load Goals</button>
+
+    <input id="customGoal" placeholder="Add your own goal">
+    <button onclick="addCustomGoal()">Add Goal</button>
+
+    <div id="goalBox" class="result"></div>
+</div>
+
+<div id="expensesPage" class="page hidden">
+    <h2>Expense Dashboard</h2>
+
+    <input id="incomeInput" placeholder="Enter Monthly Income">
+    <input id="expenseInput" placeholder="Enter Expense">
+    <input id="expenseNote" placeholder="Expense Note (food, travel...)">
+
+    <button onclick="addExpense()">Add Entry</button>
+
+    <h3>Current Month</h3>
+    <div id="expenseTable" class="result"></div>
+
+    <h3>Last Month Summary</h3>
+    <div id="lastMonth" class="result"></div>
+</div>
+<div id="careerPage" class="page hidden">
+    <h2>Career</h2>
+
+    <button onclick="openCareer()">Open</button>
+    <button id="closeBtn" onmouseover="moveButton()">Close</button>
+
+    <div id="careerContent" class="result" style="display:none;"></div>
+</div>
+
+<div id="insurancePage" class="page hidden">
+    <h2>Insurance Policy Module</h2>
+
+    <div class="card">
+        <h3>Create Policy (Dynamic Premium)</h3>
+
+        <input id="policyAmount" placeholder="Coverage Amount (₹)" oninput="calculatePremium()">
+        <input id="policyType" placeholder="Type (health, accident)" oninput="calculatePremium()">
+
+        <input id="jobType" placeholder="Your Job (driver, delivery)" oninput="calculatePremium()">
+        <input id="cityType" placeholder="City (mumbai, delhi)" oninput="calculatePremium()">
+
+        <label>Risk Level (Manual Control)</label>
+        <input type="range" id="riskSlider" min="1" max="3" step="0.5" value="1" oninput="calculatePremium()">
+
+        <div id="premiumPreview" class="result">Premium: ₹0</div>
+
+        <button onclick="createPolicy()">Create Policy</button>
+
+        <div id="policyBox" class="result"></div>
+    </div>
+
+    <div class="card">
+        <h3>Policy Details</h3>
+        <div id="policyDetails" class="result"></div>
+    </div>
+</div>
+<div id="riskPage" class="page hidden">
+    <h2>Risk-Based Analysis</h2>
+
+    <div class="grid">
+
+        <!-- LOCATION ANALYSIS -->
+        <div class="card">
+            <h3>Location Risk</h3>
+
+            <input id="riskCity" placeholder="Enter city" oninput="analyzeRiskLocation()">
+
+            <div id="riskLevel" class="result"></div>
+            <div id="climateInfo" class="result"></div>
+
+            <canvas id="riskTrafficChart"></canvas>
+        </div>
+
+        <!-- FINANCIAL RISK -->
+        <div class="card">
+            <h3>Financial Risk Analysis</h3>
+
+            <input id="riskIncome" placeholder="Monthly Income" oninput="analyzeRiskFinance()">
+            <input id="riskExpense" placeholder="Monthly Expense" oninput="analyzeRiskFinance()">
+
+            <div id="riskFinanceResult" class="result"></div>
+
+            <table id="riskTable"></table>
+        </div>
+
+    </div>
+</div>
+<div id="triggerPage" class="page hidden">
+    <h2>Automated Trigger System</h2>
+
+    <div class="grid">
+
+        <!-- ROUTE INPUT -->
+        <div class="card">
+            <h3>Route Simulation</h3>
+
+            <input id="routeCity" placeholder="Enter delivery city">
+            <input id="distance" placeholder="Distance (km)">
+            <input id="time" placeholder="Delivery Time (minutes)">
+
+            <button onclick="runTrigger()">Analyze Route</button>
+
+            <div id="triggerResult" class="result"></div>
+        </div>
+
+        <!-- SYSTEM STATUS -->
+        <div class="card">
+            <h3>System Status</h3>
+
+            <div id="systemStatus" class="result"></div>
+        </div>
+
+        <!-- PAYOUT -->
+        <div class="card">
+            <h3>Insurance Trigger</h3>
+
+            <button onclick="checkPayout()">Check Auto Payout</button>
+
+            <div id="payoutBox" class="result"></div>
+            <div class="card">
+    <h3>Auto Claim System</h3>
+
+    <button onclick="autoClaim()">Run Auto Claim</button>
+
+    <div id="autoClaimResult" class="result"></div>
+
+    <h4>Claim History</h4>
+    <div id="claimHistory" class="result"></div>
+</div>
+        </div>
+
+    </div>
+</div>
+<!-- CONTACT -->
+<div id="contactPage" class="page hidden">
+    <h2>Contact Us</h2>
+
+    <div class="card">
+        <p>📞 +91 98765 43210</p>
+        <p>📧 support@gigshield.com</p>
+
+        <input id="contactName" placeholder="Your Name">
+        <input id="contactEmail" placeholder="Your Email">
+        <input id="contactMsg" placeholder="Your Message">
+
+        <button onclick="sendMessage()">Send Message</button>
+
+        <div id="contactResult" class="result"></div>
+    </div>
+</div>
+
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>
